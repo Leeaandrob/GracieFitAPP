@@ -1,7 +1,7 @@
 (function () {
 	'use strict';
 	angular
-	.module('app', ['ionic',  'app.account'])
+	.module('app', ['ionic', 'app.views', 'app.account'])
 	.run(runBlock)
 	.config(configureRoutes);
 
@@ -24,7 +24,7 @@
         }
 
 		function gotoSignin () {
-			$state.go('signin');
+			$state.go('signin.walkthrough');
 		}
 	}
 
@@ -33,9 +33,20 @@
 		.state('signin', {
 			url: '/signin',
 			cache: false,
-			templateUrl: 'js/apps/account/signin.html',
+			abstract: true,
+			templateUrl: 'js/apps/views/account/signin.html',
 			controller: 'SigninController as vm',
 			onEnter: onEnterView
+
+		}).state('signin.walkthrough', {
+			url: '/walkthrough',
+			cache: false,
+			templateUrl: 'js/apps/views/account/signin-walkthrough.html',
+		}).state('signin.login', {
+			url: '/login',
+			cache: false,
+			templateUrl: 'js/apps/views/account/login.html',
+			controller: 'LoginCtrl as vm'
 		});
 
 		function onEnterView () {

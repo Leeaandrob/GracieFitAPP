@@ -4,6 +4,5 @@
 	.controller('SigninController', signinController);
 
 	function signinController () {
-		console.log('foo');
 	}
 }());
