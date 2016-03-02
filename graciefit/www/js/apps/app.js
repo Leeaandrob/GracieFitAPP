@@ -2,19 +2,31 @@
 	'use strict';
 	angular
 	.module('app', ['ionic',  'app.account'])
-	.run(function($ionicPlatform) {
-		$ionicPlatform.ready(function() {
-			if(window.cordova && window.cordova.plugins.Keyboard) {
-				cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-				cordova.plugins.Keyboard.disableScroll(true);
-			}
+	.run(runBlock)
+	.config(configureRoutes);
 
-			if(window.StatusBar) {
-				StatusBar.styleDefault();
-			}
-		});
+	function runBlock ($ionicPlatform, $state) {
+		$ionicPlatform.ready(setUpIonicKeyboardPlugin);
+		$ionicPlatform.ready(setUpStatusBarPlugin);
+		$ionicPlatform.ready(gotoSignin);
 
-	}).config(configureRoutes);
+        function setUpIonicKeyboardPlugin () {
+            if (window.cordova && window.cordova.plugins.Keyboard) {
+                cordova.plugins.Keyboard.hideKeyboardAccessoryBar(false);
+                cordova.plugins.Keyboard.disableScroll(false);
+            }
+        }
+
+        function setUpStatusBarPlugin () {
+            if (window.StatusBar) {
+                StatusBar.styleDefault();
+            }
+        }
+
+		function gotoSignin () {
+			$state.go('signin');
+		}
+	}
 
 	function configureRoutes ($stateProvider) {
 		$stateProvider
