@@ -1,14 +1,13 @@
 (function () {
 	'use strict';
 	angular
-	.module('app', ['ionic', 'app.views', 'app.account'])
+	.module('app', ['ionic', 'app.views', 'app.directives', 'app.account'])
 	.run(runBlock)
 	.config(configureRoutes);
 
 	function runBlock ($ionicPlatform, $state) {
 		$ionicPlatform.ready(setUpIonicKeyboardPlugin);
 		$ionicPlatform.ready(setUpStatusBarPlugin);
-		$ionicPlatform.ready(gotoSignin);
 
         function setUpIonicKeyboardPlugin () {
             if (window.cordova && window.cordova.plugins.Keyboard) {
@@ -22,13 +21,9 @@
                 StatusBar.styleDefault();
             }
         }
-
-		function gotoSignin () {
-			$state.go('signin.walkthrough');
-		}
 	}
 
-	function configureRoutes ($stateProvider) {
+	function configureRoutes ($stateProvider, $urlRouterProvider) {
 		$stateProvider
 		.state('signin', {
 			url: '/signin',
@@ -54,5 +49,6 @@
 				screen.lockOrientation('portrait');
 			}
 		}
+		$urlRouterProvider.otherwise('/signin/walkthrough');
 	}
 }());

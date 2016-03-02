@@ -3,11 +3,13 @@
 
 // Include Theme variables
 @import "scss/common/theme.variables";
+
 // Include Ionic override variables
 @import "scss/utils/override_variables";
 
 @import "www/lib/bourbon/app/assets/stylesheets/_bourbon";
 // Include all of Ionic
+
 @import "www/lib/ionic/scss/ionic";
 
 // Include Ionic override styles

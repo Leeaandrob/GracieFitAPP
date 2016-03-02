@@ -13,7 +13,7 @@ var paths = {
   templatecache: ['./www/views/**/*.html']
 };
 
-gulp.task('default', ['sass']);
+gulp.task('default', ['sass', 'templatecache']);
 
 gulp.task('sass', function(done) {
   gulp.src('./scss/ionic.app.scss')
