@@ -1,17 +1,32 @@
 (function () {
-	'use strict';
 	angular
 	.module('app.home')
 	.controller('HomeCtrl', homeCtrl);
 
 	function homeCtrl ($ionicPlatform, $ionicSideMenuDelegate,
-					   $ionicSlideBoxDelegate) {
+					   $ionicSlideBoxDelegate,
+					   Remote,
+					   HomeService) {
 		var vm = this;
 
         $ionicPlatform.ready(lockDragContent);
 
 		vm.nextState = goToNextState;
 		vm.getPremium = getPremium;
+		vm.srcImage = Remote.getBaseMediaURL();
+
+		activate();
+
+		function activate () {
+			getContent();
+		}
+
+		function getContent () {
+			HomeService.getContent().then(function (response) {
+				vm.content = response.data;
+				return response.data;
+			});
+		}
 
 		function lockDragContent () {
             $ionicSideMenuDelegate.canDragContent(false);
