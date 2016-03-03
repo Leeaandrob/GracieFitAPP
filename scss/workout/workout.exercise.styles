@@ -1,0 +1,4 @@
+.workout-exercise-view
+{
+	background-color: $content-bg !important;
+}
