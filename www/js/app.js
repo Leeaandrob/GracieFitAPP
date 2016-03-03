@@ -142,7 +142,7 @@ angular.module('app', [
   })
 
   .state('app.workout', {
-    url: "/workouts/:workoutId",
+    url: "/workouts/:name/:workoutId",
     views: {
       'menuContent': {
         templateUrl: "views/workout/workout.html",

@@ -14,7 +14,7 @@
 
 		}
 
-		function getDaily () {
+		function getDaily (name, id) {
 			return $http.post(Remote.getAPIUrl('workout_recipe'), {
 				name: name, id:id
 			});
