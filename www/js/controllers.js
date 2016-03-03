@@ -10,15 +10,18 @@ angular.module('app.controllers', [])
 })
 
 //LOGIN
-.controller('LoginCtrl', function($scope, $state, $templateCache, $q, $rootScope) {
+.controller('LoginCtrl', function($scope, $state, $templateCache, $q, $rootScope,
+								 AuthUser) {
+
 	$scope.doLogIn = function(){
-		$state.go('app.feeds-categories');
+		AuthUser.login($scope.user).then(function (response) {
+			if (response.status === 200) {
+				$state.go('app.home');
+			}
+		});
 	};
 
 	$scope.user = {};
-
-	$scope.user.email = "john@doe.com";
-	$scope.user.pin = "12345";
 
 	// We need this for the form validation
 	$scope.selected_tab = "";
@@ -29,13 +32,17 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('SignupCtrl', function($scope, $state) {
+.controller('SignupCtrl', function($scope, $state, AuthUser, warner) {
 	$scope.user = {};
 
-	$scope.user.email = "john@doe.com";
-
 	$scope.doSignUp = function(){
-		$state.go('app.feeds-categories');
+		AuthUser.register($scope.user).then(function (response) {
+			if (response.status === 201) {
+				$state.go('app.home');
+			} else if (response.status === 406){
+				warner.warn(response.data.message);
+			}
+		});
 	};
 })
 

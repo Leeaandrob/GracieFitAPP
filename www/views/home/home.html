@@ -1,4 +1,4 @@
-<ion-view class="bookmarks-view">
+<ion-view class="home-view">
   <ion-nav-title>
     <span>HOME</span>
   </ion-nav-title>
@@ -13,7 +13,7 @@
 					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 				</div>
 				<div class="item item-body">
-					<button> NEXT </button>
+					<button class="home-button-next" ng-click="vm.nextState()"> NEXT </button>
 				</div>
 			</div>
 		</ion-slide>
@@ -25,6 +25,9 @@
 				<div class="item item-body">
 					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 				</div>
+				<div class="item item-body">
+					<button class="home-button-next" ng-click="vm.nextState()"> NEXT </button>
+				</div>
 			</div>
 		</ion-slide>
 		<ion-slide>
@@ -34,6 +37,9 @@
 				</div>
 				<div class="item item-body">
 					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+				</div>
+				<div class="item item-body">
+					<button class="home-button-next" ng-click="vm.getPremium()"> BECOME PREMIUM </button>
 				</div>
 			</div>
 		</ion-slide>

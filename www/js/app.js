@@ -11,6 +11,9 @@ angular.module('underscore', [])
 angular.module('app', [
   'ionic',
   'angularMoment',
+  'app.home',
+  'app.auth',
+  'app.utils',
   'app.controllers',
   'app.directives',
   'app.filters',
@@ -114,6 +117,17 @@ angular.module('app', [
     abstract: true,
     templateUrl: "views/app/side-menu.html",
     controller: 'AppCtrl'
+  })
+
+  // HOME
+  .state('app.home', {
+    url: "/home",
+    views: {
+      'menuContent': {
+        templateUrl: "views/home/home.html",
+        controller: 'HomeCtrl as vm'
+      }
+    }
   })
 
   //MISCELLANEOUS
