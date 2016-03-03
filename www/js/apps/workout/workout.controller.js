@@ -18,6 +18,7 @@
 			var name = $stateParams.name, id = $stateParams.id;
 			WorkoutService.daily(name, id).then(function (response) {
 				vm.data = response.data;
+				vm.title = vm.data[0].workout;
 			});
 		}
 	}

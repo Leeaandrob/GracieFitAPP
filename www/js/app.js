@@ -151,6 +151,16 @@ angular.module('app', [
     }
   })
 
+  .state('app.workout-exercise', {
+    url: "/workouts/workout/:exerciseId/:count",
+    views: {
+      'menuContent': {
+        templateUrl: "views/workout/workout.exercise.html",
+        controller: 'ExerciseCtrl as vm'
+      }
+    }
+  })
+
   //MISCELLANEOUS
   .state('app.miscellaneous', {
     url: "/miscellaneous",

@@ -1,0 +1,28 @@
+<ion-view class="feed-entries-view">
+	<ion-nav-title>
+		<span>{{vm.data.name}}</span>
+	</ion-nav-title>
+	<ion-content>
+		<div class="entries-list">
+			<div class="list card entry-item">
+				<div>
+					<img style="width:25%;" ng-src="{{vm.srcImg}}{{vm.data.image}}">
+				</div>
+				<p class="entry-author">
+					{{vm.data.description}}
+				</p>
+			</div>
+		</div>
+		<div class="entries-list" ng-if="vm.data.type === 's'">
+			<div class="list card entry-item">
+				<div class="entry-heading item item-text-wrap">
+					<p class="entry-author">
+						{{counter}}
+					</p>
+					<button ng-click='startTimer()'>Start</button>
+					<button ng-click='stopTimer()'>Stop</button>
+				</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>
