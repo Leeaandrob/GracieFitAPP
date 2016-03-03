@@ -13,6 +13,7 @@ angular.module('app', [
   'angularMoment',
   'app.home',
   'app.auth',
+  'app.workout',
   'app.utils',
   'app.controllers',
   'app.directives',
@@ -126,6 +127,26 @@ angular.module('app', [
       'menuContent': {
         templateUrl: "views/home/home.html",
         controller: 'HomeCtrl as vm'
+      }
+    }
+  })
+
+  .state('app.workouts', {
+    url: "/workouts",
+    views: {
+      'menuContent': {
+        templateUrl: "views/workout/workouts.html",
+        controller: 'WorkoutsCtrl as vm'
+      }
+    }
+  })
+
+  .state('app.workout', {
+    url: "/workouts/:workoutId",
+    views: {
+      'menuContent': {
+        templateUrl: "views/workout/workout.html",
+        controller: 'WorkoutCtrl as vm'
       }
     }
   })
