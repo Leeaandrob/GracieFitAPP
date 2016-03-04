@@ -3,11 +3,14 @@
     <span>HOME</span>
   </ion-nav-title>
   <ion-content scroll="false">
+  	<div class="call-to-action">
+  		<button class="btn btn-premium">Buy Premium</button>
+  	</div>
     <ion-slide-box show-pager="true">
 		<ion-slide ng-repeat="item in vm.content">
 			<div class="list card img-full fullscreen">
 				<div class="headline">
-					<h1>Fullbody workouts</h1>
+					<h1>Fullbody workouts</h1><!-- example -->
 				</div>
 					<!--<img ng-src="{{vm.srcImage}}{{item.image}}">-->
 				<img class="img-full" ng-src="{{vm.srcImage}}{{item.image}}">
