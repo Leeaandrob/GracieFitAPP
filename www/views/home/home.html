@@ -2,12 +2,12 @@
   <ion-nav-title>
     <span>HOME</span>
   </ion-nav-title>
-  <ion-content scroll="false">
+  <ion-content class="img-full" scroll="false">
     <ion-slide-box show-pager="true">
 		<ion-slide ng-repeat="item in vm.content">
-			<div class="list card">
-				<div class="item item-image">
-					<img ng-src="{{vm.srcImage}}{{item.image}}">
+			<div class="list card fullscreen">
+				<div class="img-full">
+					<!--<img ng-src="{{vm.srcImage}}{{item.image}}">-->
 				</div>
 			</div>
 		</ion-slide>
