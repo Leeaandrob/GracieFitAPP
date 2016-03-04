@@ -6,9 +6,8 @@
     <ion-slide-box show-pager="true">
 		<ion-slide ng-repeat="item in vm.content">
 			<div class="list card fullscreen">
-				<div class="img-full">
 					<!--<img ng-src="{{vm.srcImage}}{{item.image}}">-->
-				</div>
+					<img class="img-full" ng-src="{{vm.srcImage}}{{item.image}}">
 			</div>
 		</ion-slide>
 	</ion-slide-box>
