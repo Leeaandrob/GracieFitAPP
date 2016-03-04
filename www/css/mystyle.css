@@ -6,9 +6,29 @@ in some screens of the app */
 	margin-bottom: 0px !important;
 }
 
+.headline{
+	z-index: 1;
+	position: absolute;
+	top: 7%;
+	width: 100%;
+}
+
+.headline h1{
+	text-align: center;
+	color: white;
+	font-family:  'Code Bold', Sans-serif;
+	font-style: italic;
+	font-size: 3em;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #FFFFFF;
+    text-shadow: 1px 1px 0 #0FA07F, -1px 1px 0 #0FA07F,
+             1px -1px 0 #0FA07F, -1px -1px 0 #0FA07F;
+}
+
 .img-full {
 	background-position: center center;
 	background-size: cover;
-	max-width: 100%;
-	max-height: 100%;
+	max-width: 120%;
 }
+
