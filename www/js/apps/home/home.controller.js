@@ -12,7 +12,6 @@
         $ionicPlatform.ready(lockDragContent);
 
 		vm.nextState = goToNextState;
-		vm.getPremium = getPremium;
 		vm.srcImage = Remote.getBaseMediaURL();
 
 		activate();
@@ -34,10 +33,6 @@
 
 		function goToNextState () {
 			$ionicSlideBoxDelegate.next();
-		}
-
-		function getPremium () {
-			console.log('foo');
 		}
 	}
 

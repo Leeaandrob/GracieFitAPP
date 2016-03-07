@@ -7,7 +7,6 @@ in some screens of the app */
 }
 
 .img-full {
-	background-image: url('http://localhost:8000/media/homesite/comida.jpg');
 	background-position: center center;
 	background-size: cover;
 	max-width: 100%;

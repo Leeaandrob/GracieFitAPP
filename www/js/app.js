@@ -12,6 +12,7 @@ angular.module('app', [
   'ionic',
   'angularMoment',
   'app.home',
+  'app.graciefit',
   'app.auth',
   'app.workout',
   'app.utils',
@@ -157,6 +158,16 @@ angular.module('app', [
       'menuContent': {
         templateUrl: "views/workout/workout.exercise.html",
         controller: 'ExerciseCtrl as vm'
+      }
+    }
+  })
+
+  .state('app.graciediet', {
+    url: "/graciediet",
+    views: {
+      'menuContent': {
+        templateUrl: "views/graciediet/graciediet.html",
+        controller: 'GracieDietCtrl as vm'
       }
     }
   })
