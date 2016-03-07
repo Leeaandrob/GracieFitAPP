@@ -10,9 +10,8 @@
 		<ion-slide ng-repeat="item in vm.content">
 			<div class="list card img-full fullscreen">
 				<div class="headline">
-					<h1>Fullbody workouts</h1><!-- example -->
+					<h1>{{item.title}}</h1>
 				</div>
-					<!--<img ng-src="{{vm.srcImage}}{{item.image}}">-->
 				<img class="img-full" ng-src="{{vm.srcImage}}{{item.image}}">
 			</div>
 		</ion-slide>
