@@ -6,6 +6,8 @@
     <div class="list category-feeds">
 		<a ng-repeat="exercise in vm.data" class="item item-icon-right" ui-sref="app.workout-exercise({
 			exerciseId:exercise.exercise_id,
+			workoutName:exercise.workout,
+			workoutId:exercise.workout_id,
 			count:exercise.quantity_exercises
 			})">
         <div class="thumbnail-outer">

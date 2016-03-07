@@ -151,7 +151,7 @@ angular.module('app', [
   })
 
   .state('app.workout-exercise', {
-    url: "/workouts/workout/:exerciseId/:count",
+    url: "/workouts/:workoutName/:workoutId/:exerciseId/:count",
     views: {
       'menuContent': {
         templateUrl: "views/workout/workout.exercise.html",

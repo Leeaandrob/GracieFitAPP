@@ -1,4 +1,4 @@
-<ion-view class="feed-entries-view">
+<ion-view class="workout-exercise-view">
 	<ion-nav-title>
 		<span>{{vm.data.name}}</span>
 	</ion-nav-title>
@@ -67,7 +67,8 @@
 					<!-- When it has completed -->
 					<div ng-if="done" class="text-center">
 						<div class="row">
-							<button class="button button-outline button-balanced button-rounded button-block" ng-click="modal.hide();stopTimer(true);">
+							<button class="button button-outline button-balanced button-rounded button-block" ui-sref="app.workout({name: vm.workoutName,
+			  workoutId: vm.workoutId})">
 								Done
 							</button>
 						</div>

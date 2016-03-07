@@ -8,7 +8,11 @@
 
 		vm.srcImg = Remote.getBaseMediaURL();
 		vm.exerciseTitle = $stateParams.name;
+		vm.workoutName = $stateParams.workoutName;
+		vm.workoutId = $stateParams.workoutId;
 		$scope.timer = $stateParams.count;
+
+		console.log($stateParams);
 
 		var mytimeout = null;
 
