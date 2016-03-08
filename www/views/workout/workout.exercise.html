@@ -5,12 +5,11 @@
 	<ion-content>
 		<div class="entries-list">
 			<div class="list card entry-item exercise-picture" style="margin-top: 10px;">
-				<div>
-					<img style="width:100%;" ng-src="{{vm.srcImg}}{{vm.data.image}}">
-				</div>
-				<p class="entry-author">
-					{{vm.data.description}}
-				</p>
+				<ion-slide-box show-pager="true">
+					<ion-slide ng-repeat="image in vm.data.images">
+						<img style="width:100%;" ng-src="{{vm.srcImg}}{{image}}">
+					</ion-slide>
+				</ion-slide-box>
 			</div>
 		</div>
 
