@@ -14,7 +14,6 @@
             // URI = '//localhost',
             // port = '8000',
             version = 'api/v1',
-            // version = 'v1',
 
             baseURL,
             baseMediaURL

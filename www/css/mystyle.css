@@ -83,3 +83,9 @@ in some screens of the app */
 	text-align: center;
 	font-weight: 100;
 }
+
+.btn-premium:active {
+	background-color: #7FE4CD;
+  	text-shadow: -1px 1px #193047;
+}
+
