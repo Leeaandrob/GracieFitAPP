@@ -3,3 +3,5 @@ temp
 node_modules
 platforms
 plugins
+www/js/views.js
+www/css/ionic.app.css

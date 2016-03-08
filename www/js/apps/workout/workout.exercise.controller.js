@@ -8,7 +8,11 @@
 
 		vm.srcImg = Remote.getBaseMediaURL();
 		vm.exerciseTitle = $stateParams.name;
-		$scope.counter = $stateParams.count;
+		vm.workoutName = $stateParams.workoutName;
+		vm.workoutId = $stateParams.workoutId;
+		$scope.timer = $stateParams.count;
+
+		console.log($stateParams);
 
 		var mytimeout = null;
 
@@ -26,28 +30,57 @@
 		}
 
 		$scope.onTimeout = function() {
-			if($scope.counter ===  0) {
+			if($scope.timer ===  0) {
 				$scope.$broadcast('timer-stopped', 0);
 				$timeout.cancel(mytimeout);
 				return;
 			}
-			$scope.counter--;
+			$scope.timer--;
 			mytimeout = $timeout($scope.onTimeout, 1000);
 		};
 
 		$scope.startTimer = function() {
 			mytimeout = $timeout($scope.onTimeout, 1000);
+			$scope.started = true;
 		};
 
 		$scope.stopTimer = function() {
-			$scope.$broadcast('timer-stopped', $scope.counter);
-			$scope.counter = 30;
+			$scope.$broadcast('timer-stopped', $scope.timer);
+			$scope.timer = $stateParams.count;
+			$scope.started = false;
+			$scope.paused = false;
 			$timeout.cancel(mytimeout);
+		};
+
+		$scope.pauseTimer = function() {
+			$scope.$broadcast('timer-stopped', $scope.timer);
+			$scope.started = false;
+			$scope.paused = true;
+			$timeout.cancel(mytimeout);
+		};
+
+		$scope.humanizeDurationTimer = function(input, units) {
+			if (input === 0) {
+				return 0;
+			} else {
+				var duration = moment().startOf('day').add(input, units);
+				var format = "";
+				if (duration.hour() > 0) {
+					format += "H[h] ";
+				}
+				if (duration.minute() > 0) {
+					format += "m[m] ";
+				}
+				if (duration.second() > 0) {
+					format += "s[s] ";
+				}
+				return duration.format(format);
+			}
 		};
 
 		$scope.$on('timer-stopped', function(event, remaining) {
 			if(remaining === 0) {
-				console.log('your time ran out!');
+				$scope.done = true;
 			}
 		});
 	}
