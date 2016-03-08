@@ -5,6 +5,21 @@
   <ion-nav-title>
     <span>Gracie Diet</span>
   </ion-nav-title>
+  <!-- added search box para filtrar os items.
+  Full code, o css e o js ta aqui: http://codepen.io/brandyshea/pen/gbZrNQ -->
+  <ion-header-bar class="bar-light bar-subheader">
+      <input type="search"
+             placeholder="Filter contacts..."
+             ng-model="search"
+             ng-focus="searchFocused = true"
+             ng-blur="searchFocused = false"
+             ng-change="scrollTop()"
+             class="full-width">
+      <button ng-if="search.length"
+              class="button button-icon ion-android-close input-button"
+              ng-click="clearSearch()">
+      </button>
+    </ion-header-bar><!--/ search box-->
   <ion-content>
     <div class="row categories-list">
       <div ng-repeat="workout in vm.workouts" class="col col-50">
