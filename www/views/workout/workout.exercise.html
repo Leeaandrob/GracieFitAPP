@@ -4,9 +4,9 @@
 	</ion-nav-title>
 	<ion-content>
 		<div class="entries-list">
-			<div class="list card entry-item">
+			<div class="list card entry-item exercise-picture" style="margin-top: 10px;">
 				<div>
-					<img style="width:25%;" ng-src="{{vm.srcImg}}{{vm.data.image}}">
+					<img style="width:100%;" ng-src="{{vm.srcImg}}{{vm.data.image}}">
 				</div>
 				<p class="entry-author">
 					{{vm.data.description}}
@@ -14,14 +14,15 @@
 			</div>
 		</div>
 
+		<!-- timer -->
 		<div class="entries-list" ng-if="vm.data.type === 'Seconds'">
-			<div class="list card entry-item">
-				<div class="entry-heading item item-text-wrap">
+			<div class="list card entry-item" style="margin-bottom: 0px;margin-top: 10px;">
+				<div class="entry-heading item item-text-wrap" style="padding:0px 16px;">
 					<div class="progress-wrapper">
 						<div class="progress">
 							{{humanizeDurationTimer(timer,'s')}}
 						</div>
-						<div round-progress max="timeForTimer" current="timer" clockwise="false" color="#ef473a" rounded="true" class="text-center"></div>
+						<div round-progress max="timeForTimer" current="timer" clockwise="false" color="#0FA07F" rounded="true" class="text-center"></div>
 					</div>
 					<!-- Here you have the different states that the buttons take during the process -->
 					<!-- Before starting -->
@@ -80,6 +81,6 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div><!--/ timer -->
 	</ion-content>
 </ion-view>
