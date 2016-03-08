@@ -9,10 +9,10 @@
     function Remote () {
         var
             protocol = 'http:',
-            // URI = '//www.graciefit.com',
-            // port = '80',
-            URI = '//localhost',
-            port = '8000',
+            URI = '//www.graciefit.com',
+            port = '80',
+            //URI = '//localhost',
+            //port = '8000',
             version = 'api/v1',
             // version = 'v1',
 
