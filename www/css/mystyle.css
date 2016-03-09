@@ -95,3 +95,18 @@ in some screens of the app */
 .exercise-picture {
 	margin-bottom: 0px !important;
 }
+/* gracie diet */
+
+.g-list {
+	padding-left: 20px !important;
+}
+
+/* >>>>> Before and After item checked icon style <<<<
+     ps: não sei se ta certo  */
+.ion-ios-checkmark-outline::before {
+	color: #DCDCDC;
+}
+
+.ion-ios-checkmark-outline::after {
+	color: green;
+}
