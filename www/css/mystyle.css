@@ -101,6 +101,12 @@ in some screens of the app */
 	padding-left: 20px !important;
 }
 
+/* qnd o item n estiver disponivel pra combinacao */
+.g-list-not {
+	background-color: #EEEBE8;
+	text-decoration: line-through;
+}
+
 /* >>>>> Before and After item checked icon style <<<<
      ps: não sei se ta certo  */
 .ion-ios-checkmark-outline::before {
@@ -110,3 +116,4 @@ in some screens of the app */
 .ion-ios-checkmark-outline::after {
 	color: green;
 }
+
