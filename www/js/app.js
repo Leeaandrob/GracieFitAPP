@@ -9,7 +9,7 @@ angular.module('app', [
   'ionic',
   'angularMoment',
   'app.home',
-  'app.graciefit',
+  'app.graciediet',
   'app.auth',
   'app.workout',
   'app.utils',
@@ -166,6 +166,16 @@ angular.module('app', [
       'menuContent': {
         templateUrl: "views/graciediet/graciediet.html",
         controller: 'GracieDietCtrl as vm'
+      }
+    }
+  })
+
+  .state('app.graciediet-foods', {
+    url: "/graciediet/:name/foods",
+    views: {
+      'menuContent': {
+        templateUrl: "views/graciediet/graciediet.foods.html",
+        controller: 'GracieDietFoodsCtrl as vm'
       }
     }
   })

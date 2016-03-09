@@ -1,4 +1,4 @@
 (function () {
 	angular
-	.module('app.graciefit', []);
+	.module('app.graciediet', []);
 }());

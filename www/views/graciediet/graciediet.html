@@ -21,16 +21,16 @@
       </button>
     </ion-header-bar><!--/ search box-->
   <ion-content>
-    <div class="row categories-list">
-      <div ng-repeat="workout in vm.workouts" class="col col-50">
-		  <a class="feed-category" ui-sref="app.workout({name: workout.name,
-			  workoutId: workout.id})">
-          <pre-img ratio="_1_1" helper-class="square-image">
-            <img class="category-image" ng-src="{{workout.image}}" spinner-on-load>
-          </pre-img>
-          <div class="category-bg"></div>
-        </a>
-      </div>
-    </div>
-  </ion-content>
+
+	  <div class="row categories-list">
+		  <div ng-repeat="category in vm.subs" class="col col-50">
+			  <a class="feed-category" ui-sref="app.graciediet-foods({name: category.name})">
+				  <pre-img ratio="_1_1" helper-class="square-image">
+					  <img class="category-image" ng-src="{{vm.srcImage}}{{category.image}}" spinner-on-load>
+				  </pre-img>
+				  <div class="category-bg"></div>
+				  <span class="category-title">{{category.name}}</span>
+			  </a>
+		  </div>
+	  </div>
 </ion-view>
